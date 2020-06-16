@@ -1,0 +1,24 @@
+.side-bar
+  .side-bar__user-name
+    .side-bar-box
+      .side-bar-box__user-name
+        user-name
+      .icon
+        .edit__btn--icon
+        = link_to "#", class: "edit__btn" do
+          = icon('far', 'edit', class: "edit__btn--icon")
+        .new__btn--icon
+        = link_to "#", class: "new__btn" do
+          = icon('fas', 'cog', class: "new__btn--icon")
+  .side-bar__group-list
+    .groups
+      .group__group-list
+        グループリスト
+      .group__group-message
+        メッセージトップ
+
+
+
+-# <%= link_to("URL") do %>
+-#   <span class="far fa-search search-btn"></span>
+-# <% end %>

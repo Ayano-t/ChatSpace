@@ -1,0 +1,24 @@
+.main-chat
+  .chat-main__group-info
+    .chat-main-header__left
+      .group__name
+        example-group-name
+      .group__member
+        example-member
+    .chat-main-header__edit-btn
+    %a.link_button{:href => "#"} Edit
+
+  .chat-main__message-list
+    .chat-header
+      .chat__user-name name
+      .chat__date 2020-6-16
+    .chat__message hello!
+
+  .chat-main__message-form
+    %from.new-message
+      .new-message__input
+      %input{type: "text", class: "new-message__text", placeholder: "type a message"}
+      %label{class: "new-message__image"}
+        = icon('fas','image')
+        %input{type: "file", class: "new-message__image__file"}
+    %input{type: "submit", value: "send", class: "submit-btn"}
