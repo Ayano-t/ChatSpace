@@ -1,20 +1,19 @@
-.main-chat
-  .chat-main__group-info
-    .chat-main-header__left
-      .group__name
+.main--chat
+  .header
+    .header__left--blok
+      .header__left--blok__group-name
         example-group-name
-      .group__member
+      .header__left--blok__group-member
         example-member
-    .chat-main-header__edit-btn
-    %a.link_button{:href => "#"} Edit
+    %a.header__edit-btn{href: '#'} edit
 
-  .chat-main__message-list
-    .chat-header
-      .chat__user-name name
-      .chat__date 2020-6-16
-    .chat__message hello!
+  .message-list
+    .message-list__header
+      .message-list__header__user-name name
+      .message-list__header__date 2020-6-16
+    .message-list__message hello!
 
-  .chat-main__message-form
+  .message-form
     %from.new-message
       .new-message__input
       %input{type: "text", class: "new-message__text", placeholder: "type a message"}
