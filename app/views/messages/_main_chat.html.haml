@@ -5,7 +5,8 @@
         example-group-name
       .header__left--blok__group-member
         example-member
-    %a.header__edit-btn{href: '#'} edit
+    =link_to "#",class: "header__edit-btn" do
+      edit
 
   .message-list
     .message-list__header
@@ -14,7 +15,7 @@
     .message-list__message hello!
 
   .message-form
-    %from.new-message
+    %form.new-message
       .new-message__input
       %input{type: "text", class: "new-message__text", placeholder: "type a message"}
       %label{class: "new-message__image"}
