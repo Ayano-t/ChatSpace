@@ -4,22 +4,23 @@
   float: left;
 }
 
-.side-bar__user-name{
+.side-bar__header{
   background-color: #253141;
   height: 100px;
   width: 300px;
   display: flex;
+  align-items: center;
   .side-bar-box{
     height: 20px;
     width: 260px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
     .side-bar-box__user-name{
       font-size: 16px;
     }
     .icon{
       display: flex;
+      margin: 0 0 0 auto;
       .edit__btn--icon{
         color: #ffffff;
         margin-right: 5px;
