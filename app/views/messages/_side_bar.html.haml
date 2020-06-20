@@ -1,14 +1,14 @@
 .side-bar
-  .side-bar__user-name
+  .side-bar__header
     .side-bar-box
       .side-bar-box__user-name
-        user-name
+      = current_user.name
       .icon
         .edit__btn--icon
         = link_to "#", class: "edit__btn" do
           = icon('far', 'edit', class: "edit__btn--icon")
         .new__btn--icon
-        = link_to "#", class: "new__btn" do
+        = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: "new__btn--icon")
   .side-bar__group-list
     .groups
