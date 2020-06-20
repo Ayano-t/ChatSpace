@@ -1,0 +1,101 @@
+.main--chat{
+  width: calc(100vw - 300px);
+  float: left;
+}
+
+.header{
+    background-color: #ffffff;
+    height: 100px;
+    width: calc(100vw - 300px);
+    display: flex;
+    justify-content: space-between;
+    &__left--blok{
+      &__group-name{
+        font-size: 20px;
+        color: #333333;
+        padding-top: 35px;
+        margin-left: 40px;
+
+      }
+      &__group-member{
+        font-size: 12px;
+        color: #999999;
+        padding-top: 15px;
+        margin-left: 40px;
+      }
+    }
+    &__edit-btn{
+      color: #38eaf0;
+      border: solid 1px #38eaf0;
+      margin-right: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      margin-bottom: 32px;
+      text-decoration: none;
+    }
+}
+
+.message-list{
+    background-color: #fafafa;
+    height: calc(100vh - 100px - 90px);
+    width: calc(100vw - 300px);
+    padding-left: 40px;
+    &__header{
+      display: flex;
+      padding-top: 35px;
+      &__user-name{
+        color: #333333;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date{
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+    &__message{
+      color: #434A54;
+      font-size: 14px;
+      padding-top: 12px;
+      margin-bottom: 46px;
+    }
+}
+
+.message-form{
+    background-color: #d2d2d2;
+    height: 90px;
+    width: calc(100vw - 300px);
+    padding: 20px 40px;
+    display: flex;
+
+    .new-message{
+      display: flex;
+      height: 50px;
+      width: 100%;
+      position: relative;
+      &__text{
+        width: 100%;
+        height: 50px;
+        border-style: none;
+        padding: 0 40px 0 10px;
+      }
+      &__image{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        &__file{
+          display: none;
+        }
+      }
+    }
+    .submit-btn{
+      width: 100px;
+      height: 50px;
+      background-color: #38aef0;
+      color: white;
+      padding: 0 30px;
+      margin-left: 15px;
+    }
+}
