@@ -9,16 +9,34 @@
       edit
 
   .message-list
+    = render @messages
     .message-list__header
-      .message-list__header__user-name name
-      .message-list__header__date 2020-6-16
-    .message-list__message hello!
+      .message-list__header__user-name
+      .message-list__header__date
+    .message-list__message
 
   .message-form
-    %form.new-message
-      .new-message__input
-      %input{type: "text", class: "new-message__text", placeholder: "type a message"}
-      %label{class: "new-message__image"}
-        = icon('fas','image')
-        %input{type: "file", class: "new-message__image__file"}
-    %input{type: "submit", value: "send", class: "submit-btn"}
+    .new-message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'new-message__text', placeholder: 'type a message'
+        .new-message__image
+          = f.label :image, class: 'new-message' do
+            = icon('fas','image')
+            = f.file_field :image, class: 'new-message__image__file'
+        = f.submit 'Send', class: 'submit-btn'
+
+-# .message-form
+-#   .new-message
+-#       .new-message__text
+-#       .new-message__image
+-#         .new-message__image__file
+-#       .submit-btn
+
+    -# .form
+    -#   = form_for [@group, @message] do |f|
+    -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    -#     .form__mask
+    -#       = f.label :image, class: 'form__mask__image' do
+    -#         = icon('fas', 'image', class: 'icon')
+    -#         = f.file_field :image, class: 'hidden'
+    -#     = f.submit 'Send', class: 'form__submit'
