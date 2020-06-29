@@ -2,9 +2,10 @@
   .header
     .header__left--blok
       .header__left--blok__group-name
-        example-group-name
+        = @group.name
       .header__left--blok__group-member
-        example-member
+        - @group.users.each do |user|
+          = user.name
     =link_to "#",class: "header__edit-btn" do
       edit
 
@@ -24,19 +25,3 @@
             = icon('fas','image')
             = f.file_field :image, class: 'new-message__image__file'
         = f.submit 'Send', class: 'submit-btn'
-
--# .message-form
--#   .new-message
--#       .new-message__text
--#       .new-message__image
--#         .new-message__image__file
--#       .submit-btn
-
-    -# .form
-    -#   = form_for [@group, @message] do |f|
-    -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-    -#     .form__mask
-    -#       = f.label :image, class: 'form__mask__image' do
-    -#         = icon('fas', 'image', class: 'icon')
-    -#         = f.file_field :image, class: 'hidden'
-    -#     = f.submit 'Send', class: 'form__submit'
