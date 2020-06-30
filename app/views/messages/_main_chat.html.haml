@@ -6,9 +6,8 @@
       .header__left--blok__group-member
         - @group.users.each do |user|
           = user.name
-    =link_to "#",class: "header__edit-btn" do
+    = link_to edit_group_path(@group.id), class:'header__edit-btn' do
       edit
-
   .message-list
     = render @messages
     .message-list__header
