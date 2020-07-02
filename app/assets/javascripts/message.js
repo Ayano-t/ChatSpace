@@ -59,5 +59,8 @@ $(function(){
     .always(() => {
       $(".submit-btn").removeAttr("disabled");
       });
+    .fail(function() {
+        alert("メッセージ送信に失敗しました");
+      });
   });
 });
