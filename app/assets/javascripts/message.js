@@ -41,12 +41,12 @@ $(function(){
     }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    var FormData = new FormData(this);
+    var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
-      url: '/groups/:group_id/messages',
+      url: url,
       type: 'POST',
-      data: FormData,
+      data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
