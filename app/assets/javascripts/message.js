@@ -53,16 +53,15 @@ $(function(){
       })
     .done(function(data){
       var html = buildHTML(data);
-      $('.message').append(html);
+      $('.message-list').append(html);
       $('form')[0].reset();
-      $('.message').animate({ scrollTop: $('.message')[0].scrollHeight});
-      
+      $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
+    })
+    .fail(function() {
+        alert("メッセージ送信に失敗しました");
     })
     .always(() => {
       $(".submit-btn").removeAttr("disabled");
-      });
-    .fail(function() {
-        alert("メッセージ送信に失敗しました");
-      });
+    });
   });
 });
