@@ -44,8 +44,8 @@ $(function(){
       var formData = new FormData(this);
       var url = $(this).attr('action');
       $.ajax({
-        url: url,
-        type: "POST",
+        url: '/groups/:group_id/messages',
+        type: 'POST',
         data: formData,
         dataType: 'json',
         processData: false,
@@ -53,7 +53,7 @@ $(function(){
       })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
+      $('.message-list').append(html);
       $('form')[0].reset();
     })
     .always(() => {
