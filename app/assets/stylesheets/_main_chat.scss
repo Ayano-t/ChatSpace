@@ -41,6 +41,7 @@
     height: calc(100vh - 100px - 90px);
     width: calc(100vw - 300px);
     padding-left: 40px;
+    overflow: scroll;
     &__header{
       display: flex;
       padding-top: 35px;
@@ -69,13 +70,14 @@
     width: calc(100vw - 300px);
     padding: 20px 40px;
     display: flex;
+    
 
     .new-message{
       width: 100%;
       height: 50px;
       position: relative;
       &__text{
-        width: 86%;
+        width: 85%;
         height: 50px;
         border-style: none;
         padding: 0 40px 0 10px;

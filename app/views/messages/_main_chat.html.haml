@@ -10,17 +10,14 @@
       edit
   .message-list
     = render @messages
-    .message-list__header
-      .message-list__header__user-name
-      .message-list__header__date
-    .message-list__message
 
   .message-form
     .new-message
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'new-message__text', placeholder: 'type a message'
+        = f.submit 'Send', class: 'submit-btn'
         .new-message__image
           = f.label :image, class: 'new-message' do
             = icon('fas','image')
             = f.file_field :image, class: 'new-message__image__file'
-        = f.submit 'Send', class: 'submit-btn'
+        -# = f.submit 'Send', class: 'submit-btn'
