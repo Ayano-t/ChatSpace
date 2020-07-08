@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       var html =
-         `<div class="message-list">
+         `<div class="message">
             <div class="message-list__header">
               <div class="message-list__header__user-name">
                 ${message.user_name}
@@ -11,8 +11,8 @@ $(function(){
                 ${message.created_at}
               </div>
             </div>
-            <div class="message-list">
-              <p class="message-list__message">
+            <div class="message-list__message">
+              <p class="lower-message__content">
                 ${message.content}
               </p>
             </div>
@@ -21,7 +21,7 @@ $(function(){
         return html;
       } else {
         var html =
-         `<div class="message-list">
+         `<div class="message">
             <div class="message-list__header">
               <div class="message-list__header__user-name">
                 ${message.user_name}
@@ -30,8 +30,8 @@ $(function(){
                 ${message.created_at}
               </div>
             </div>
-            <div class="message-list">
-              <p class="message-list__message">
+            <div class="message-list__message">
+              <p class="lower-message__content">
                 ${message.content}
               </p>
             </div>
@@ -44,7 +44,7 @@ $(function(){
       var formData = new FormData(this);
       var url = $(this).attr('action');
       $.ajax({
-        url: '/groups/:group_id/messages',
+        url: url,
         type: 'POST',
         data: formData,
         dataType: 'json',
@@ -53,8 +53,10 @@ $(function(){
       })
     .done(function(data){
       var html = buildHTML(data);
-      $('.message-list').append(html);
+      $('.message').append(html);
       $('form')[0].reset();
+      $('.message').animate({ scrollTop: $('.message')[0].scrollHeight});
+      
     })
     .always(() => {
       $(".submit-btn").removeAttr("disabled");
