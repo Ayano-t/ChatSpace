@@ -69,7 +69,7 @@ $(function(){
     var last_message_id = $('.message:last').data("message-id");
     $.ajax({
       url: "api/messages",
-      type: 'get',
+      type: 'GET',
       dataType: 'json',
       data: {id: last_message_id}
     })
@@ -80,7 +80,7 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       }
     })
     .fail(function() {
@@ -88,7 +88,6 @@ $(function(){
     });
   };
   
-  setInterval(reloadMessages, 7000);
 
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
