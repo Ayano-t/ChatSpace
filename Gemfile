@@ -94,3 +94,4 @@ gem 'mini_magick'
 gem 'jquery-rails' 
 gem 'jquery-ui-rails'
 
+gem 'fog-aws'
