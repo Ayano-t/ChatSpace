@@ -29,3 +29,4 @@
 public/uploads/*
 
 config/credentials.yml.enc
+config/secrets.yml
